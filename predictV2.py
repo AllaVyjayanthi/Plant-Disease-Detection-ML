@@ -5,7 +5,7 @@ import tensorflow.keras as K
 from tensorflow.keras.preprocessing.image import img_to_array
 
 # Load your trained model
-model = K.models.load_model("root/cnn_model.keras")
+model = K.models.load_model("cnn_model.keras")
 # Define the class names
 classes = ['Healthy','Powdery','Rust']
 
@@ -24,7 +24,7 @@ if uploaded_file is not None:
     st.write("Classifying...")
 
     # Preprocess the image
-    img = image.resize((192, 192))
+    img = image.resize((256, 256))
     x = img_to_array(img)
     x = np.expand_dims(x, axis=0)
 
